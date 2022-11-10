@@ -4,7 +4,6 @@ import {
   space,
   layout,
   flexbox,
-  grid,
   background,
   border,
   position,
@@ -15,7 +14,6 @@ export const Box = styled('div')(
   space,
   layout,
   flexbox,
-  grid,
   background,
   border,
   position
