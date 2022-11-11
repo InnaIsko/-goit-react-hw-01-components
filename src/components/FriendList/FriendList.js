@@ -1,20 +1,36 @@
-// import { Box } from 'components/Box';
-// import PropTypes from 'prop-types';
+import { Box } from 'components/Box';
+import { FriendName, StatusFriend } from './FriendList.styled';
+import PropTypes from 'prop-types';
+
 export function FriendList({ friends }) {
   return (
-    <ul className="friend-list">
+    <ul>
       {friends.map(friend => (
-        <li key={friend.id} className="item">
-          <span className="status">{friend.isOnline}</span>
-          <img
-            className="avatar"
-            src={friend.avatar}
-            alt="User avatar"
-            width="48"
-          />
-          <p className="name">{friend.name}</p>
-        </li>
+        <Box
+          as="li"
+          display="flex"
+          minWidth="300px"
+          bg="accent"
+          boxShadow="box"
+          mb="20px"
+          p="10px"
+          key={friend.id}
+        >
+          <StatusFriend isOnline={friend.isOnline}></StatusFriend>
+          <img src={friend.avatar} alt="User avatar" width="48" />
+          <FriendName>{friend.name}</FriendName>
+        </Box>
       ))}
     </ul>
   );
 }
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+    })
+  ),
+};

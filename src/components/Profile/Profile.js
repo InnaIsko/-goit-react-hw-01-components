@@ -10,7 +10,7 @@ import {
 
 export function Profile({ username, tag, location, avatar, stats }) {
   return (
-    <Box maxWidth="300px" m="20px" boxShadow="box">
+    <Box minWidth="300px" m="20px" boxShadow="box">
       <Box
         display="flex"
         flexDirection="column"

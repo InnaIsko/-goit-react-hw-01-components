@@ -2,11 +2,12 @@ export const theme = {
   colors: {
     black: '#000',
     white: '#fff',
-    text: '#2a2a2a',
+    body: '#F8FDF8 ',
     primary: ' #70727A  ', //
     secondary: '#D4D7DD  ', //
     accent: '#C5DFDF', //
-    blue: '#5AD0F3 ', //
+    statusRed: '#FD0B00', //
+    statusGreen: '#0ACE1A',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
@@ -18,7 +19,7 @@ export const theme = {
     xs: '12px',
     s: '14px',
     m: '16px',
-    l: '32px',
+    l: '24px',
     xl: '64px',
   },
   fontWeights: {

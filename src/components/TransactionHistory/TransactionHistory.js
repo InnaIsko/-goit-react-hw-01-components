@@ -1,25 +1,41 @@
-import { toBeInTheDOM } from '@testing-library/jest-dom/dist/matchers';
+import PropTypes from 'prop-types';
+import {
+  Table,
+  TableHeader,
+  TableInfo,
+  TableString,
+} from '../TransactionHistory/TransactionHistory.styled';
 
 export function TransactionHistory({ items }) {
   return (
-    <table className="transaction-history">
+    <Table>
       <thead>
         <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
+          <TableHeader>Type</TableHeader>
+          <TableHeader>Amount</TableHeader>
+          <TableHeader>Currency</TableHeader>
         </tr>
       </thead>
 
       <tbody>
         {items.map(item => (
-          <tr key={item.id}>
-            <td>{item.type}</td>
-            <td>{item.amount}</td>
-            <td>{item.currency}</td>
-          </tr>
+          <TableString key={item.id}>
+            <TableInfo>{item.type}</TableInfo>
+            <TableInfo>{item.amount}</TableInfo>
+            <TableInfo>{item.currency}</TableInfo>
+          </TableString>
         ))}
       </tbody>
-    </table>
+    </Table>
   );
 }
+TransactionHistory.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ),
+};
