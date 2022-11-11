@@ -3,10 +3,10 @@ export const theme = {
     black: '#000',
     white: '#fff',
     text: '#2a2a2a',
-    primary: ' #70727A  ',
-    secondary: '#D4D7DD  ',
-    accent: '#609',
-    muted: '#f6f6f6',
+    primary: ' #70727A  ', //
+    secondary: '#D4D7DD  ', //
+    accent: '#C5DFDF', //
+    blue: '#5AD0F3 ', //
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
@@ -39,5 +39,9 @@ export const theme = {
     md: '8px',
     lg: '16px',
     round: '50%',
+  },
+  shadows: {
+    text: '6px 3px #97BDC1  ',
+    box: 'rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px',
   },
 };

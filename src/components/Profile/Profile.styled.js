@@ -11,18 +11,21 @@ export const UserName = styled.p`
   font-weight: ${p => p.theme.fontWeights.bold};
   margin-top: 15px;
   margin-bottom: 0;
+  text-shadow: ${p => p.theme.shadows.text};
 `;
-export const UserTag = styled.p`
+export const UserInfo = styled.p`
   font-size: ${p => p.theme.fontSizes.m};
   font-weight: ${p => p.theme.fontWeights.bold};
   color: ${p => p.theme.colors.primary};
   margin-top: 10px;
   margin-bottom: 0;
 `;
-export const UserLocation = styled.p`
+export const ProfileInfo = styled.span`
+  font-size: ${p => p.theme.fontSizes.m};
+  font-weight: ${p => p.theme.fontWeights.bold};
+`;
+export const ProfileName = styled.span`
   font-size: ${p => p.theme.fontSizes.m};
   font-weight: ${p => p.theme.fontWeights.bold};
   color: ${p => p.theme.colors.primary};
-  margin-top: 10px;
-  margin-bottom: 0;
 `;

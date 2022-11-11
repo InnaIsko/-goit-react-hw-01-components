@@ -1,20 +1,40 @@
-// import { Box } from 'components/Box';
+import { Box } from 'components/Box';
 import PropTypes from 'prop-types';
+import {
+  Title,
+  StatisticsInfoList,
+  StatisticsInfo,
+} from '../Statistics/Statistics.styled';
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
 
 export function Statistics({ title, stats }) {
   return (
-    <section className="statistics">
-      <h2 className="title">{title}</h2>
-
-      <ul className="stat-list">
+    <Box
+      as="section"
+      display="flex"
+      flexDirection="column"
+      maxWidth="375px"
+      m="20px"
+      boxShadow="box"
+      bg="accent"
+      minHeight="200px"
+    >
+      <Title>{title}</Title>
+      <Box as="ul" display="flex" justifyContent="space-around" m="0" p="0">
         {stats.map(stat => (
-          <li key={stat.id} className="item">
-            <span className="label">{stat.lable}</span>
-            <span className="percentage">{stat.percentage}%</span>
-          </li>
+          <StatisticsInfoList
+            backgroundColor={getRandomHexColor()}
+            key={stat.id}
+          >
+            <StatisticsInfo>{stat.label}</StatisticsInfo>
+            <StatisticsInfo>{stat.percentage}%</StatisticsInfo>
+          </StatisticsInfoList>
         ))}
-      </ul>
-    </section>
+      </Box>
+    </Box>
   );
 }
 Statistics.propTypes = {

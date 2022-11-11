@@ -1,28 +1,28 @@
 import { Box } from 'components/Box';
 import PropTypes from 'prop-types';
-import { ImgAvatar, UserName, UserTag, UserLocation } from './Profile.styled';
+import {
+  ImgAvatar,
+  UserName,
+  UserInfo,
+  ProfileName,
+  ProfileInfo,
+} from './Profile.styled';
 
 export function Profile({ username, tag, location, avatar, stats }) {
   return (
-    <Box
-      maxWidth="350px"
-      borderColor="secondary"
-      border="normal"
-      borderRadius="md"
-      m="20px"
-      className="profile"
-    >
+    <Box maxWidth="300px" m="20px" boxShadow="box">
       <Box
         display="flex"
         flexDirection="column"
         alignItems="center"
-        p="35px"
-        className="description"
+        pb="40px"
+        pt="40px"
+        bg="accent"
       >
-        <ImgAvatar src={avatar} alt="User avatar" className="avatar" />
-        <UserName className="name">{username}</UserName>
-        <UserTag className="tag">{tag}</UserTag>
-        <UserLocation className="location">{location}</UserLocation>
+        <ImgAvatar src={avatar} alt="User avatar" />
+        <UserName>{username}</UserName>
+        <UserInfo>{tag}</UserInfo>
+        <UserInfo>{location}</UserInfo>
       </Box>
 
       <Box
@@ -31,22 +31,21 @@ export function Profile({ username, tag, location, avatar, stats }) {
         bg="secondary"
         justifyContent="space-around"
         alignItems="center"
-        className="stats"
         p="0"
         m="0"
-        minHeight="60px"
+        minHeight="80px"
       >
         <Box as="li" display="flex" flexDirection="column">
-          <span className="label">Followers</span>
-          <span className="quantity">{stats.followers}</span>
+          <ProfileName>Followers</ProfileName>
+          <ProfileInfo>{stats.followers}</ProfileInfo>
         </Box>
         <Box as="li" display="flex" flexDirection="column">
-          <span className="label">Views</span>
-          <span className="quantity">{stats.views}</span>
+          <ProfileName>Views</ProfileName>
+          <ProfileInfo>{stats.views}</ProfileInfo>
         </Box>
         <Box as="li" display="flex" flexDirection="column">
-          <span className="label">Likes</span>
-          <span className="quantity">{stats.likes}</span>
+          <ProfileName>Likes</ProfileName>
+          <ProfileInfo>{stats.likes}</ProfileInfo>
         </Box>
       </Box>
     </Box>
