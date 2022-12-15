@@ -22,7 +22,7 @@ export function Statistics({ title, stats }) {
       bg="accent"
       minHeight="200px"
     >
-      <Title>{title}</Title>
+      {title && <Title>{title}</Title>}
       <Box as="ul" display="flex" justifyContent="space-around" m="0" p="0">
         {stats.map(stat => (
           <StatisticsInfoList
